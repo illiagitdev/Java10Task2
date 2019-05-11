@@ -1,26 +1,39 @@
 import java.io.Console;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
+import java.io.BufferedReader;
+//import java.io.IOExeption;
+//import java.io.InputStreamReader;
 
 public class Passport {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException
+    {
 
         ///task 2 lesson1
         {
             //use Scanner for input
             Scanner in = new Scanner(System.in);
 
+            BufferedReader stream = new BufferedReader(new InputStreamReader(System.in));
+
             //person name
             String fName = null, lName = null;
             System.out.print("Enter First Name: ");
             //TODO: fix method ReadInput() - doesn't work correctly
-            fName = ReadInput(in);//in.nextLine();
+            //fName = in.nextLine();
+            fName = stream.readLine();
+
             System.out.print("Enter Last name: ");
-            lName = in.nextLine();
+            //lName = in.nextLine();
+            lName = stream.readLine();
 
             //gender & age
             String gender = null;
             System.out.print("Enter gender: ");
-            gender = in.nextLine();
+            //gender = in.nextLine();
+            gender = stream.readLine();
+
             int age = 0;
             System.out.print("Your age: ");
             age = in.nextInt();
@@ -29,9 +42,12 @@ public class Passport {
             //TODO: fis - skip reading first location
             String locFrom = null, locCurrent = null;
             System.out.print("Place, where you were born: ");
-            locFrom = in.nextLine();
+            //locFrom = in.nextLine();
+            locFrom = stream.readLine();
+
             System.out.print("Where you live now: ");
-            locCurrent = in.nextLine();
+            //locCurrent = in.nextLine();
+            locCurrent = stream.readLine();
 
             //resulted output
             System.out.flush();
@@ -49,44 +65,25 @@ public class Passport {
             System.out.println("-----------------------------");
         }
 
-        ///task 3 lesson1
-        {
-            Scanner in2 = new Scanner(System.in);
-            System.out.print("Enter first number: x = ");
-            //todo: add check for numeric input
-            double operand1 = in2.nextDouble();
 
-            System.out.print("Enter second number: y = ");
-            double operand2 = in2.nextDouble();
-            System.out.println("-----------------------------------");
-            System.out.println("----");
-            System.out.println("---- x + y = " + (operand1 + operand2));
-            System.out.println("----");
-            System.out.println("---- x * y = " + (operand1 * operand2));
-            System.out.println("----");
-            System.out.println("---- x / y = " + (operand1 / operand2));
-            System.out.println("----");
-            System.out.println("---- x - y = " + (operand1 - operand2));
-            System.out.println("----");
-            System.out.println("---- x % y = " + (operand1 % operand2));
-            System.out.println("----");
-            System.out.println("---- x == y = " + (operand1 == operand2));
-            System.out.println("----");
-            System.out.println("---- x < y = " + (operand1 < operand2));
-            System.out.println("----");
-            System.out.println("---- x > y = " + (operand1 > operand2));
-            System.out.println("----");
-            System.out.println("--------------------------------------");
-        }
 
     }
 
-    public static String ReadInput(Scanner text){
+    public static String ReadInput(){
         String line = null;
-        do {
-            line = text.nextLine();
+        Scanner in = new Scanner(System.in);
 
-        }while (line != null && !line.isEmpty());
+        getline:{
+            while (true) {
+                if (in.hasNext())
+                    line = in.nextLine();
+                if (line != null || line.isEmpty())
+                    break getline;
+                System.out.println(line);
+            }
+        }
+
+        in.close();
         return line;
     }
 }
