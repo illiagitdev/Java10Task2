@@ -7,11 +7,14 @@ public class ArrayExample {
         int[] array = {1, 5, 8};
         int[] array2 = new int[4];
 
+        array[1] = 554;
         System.out.println(array[1]);
-        System.out.println(array[2]);
+        System.out.println(array[3]);
 
         for (int item : array ) {
             System.out.println(item);
         }
+
+        for ()
     }
 }
