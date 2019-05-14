@@ -1,4 +1,4 @@
-package lessons.lesson3;
+package lessons.lesson3.ifelse;
 
 import java.util.Scanner;
 

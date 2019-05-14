@@ -1,4 +1,4 @@
-package lessons.lesson3;
+package lessons.lesson3.ifelse;
 
 import java.util.Scanner;
 
@@ -14,6 +14,8 @@ public class MiniIfExample {
         String resultV1 = line.length() == 5 ? "ДЖЕКПОТ!!!" : "провал!";
         System.out.println(resultV1);
         //-----------------------
+
+
 
         //-----------------------
         System.out.println( line.length() == 5 ? "ДЖЕКПОТ!!!" : (line.length() == 3 ? "провал!": ""));

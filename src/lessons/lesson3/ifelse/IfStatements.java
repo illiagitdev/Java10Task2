@@ -1,4 +1,4 @@
-package lessons.lesson3;
+package lessons.lesson3.ifelse;
 
 import lessons.lesson2.BinaryOperator;
 import lessons.lesson2.LogicalOperator;
