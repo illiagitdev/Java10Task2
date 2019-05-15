@@ -1,37 +1,41 @@
 package lessons.lesson3.sorting;
 
+import java.util.Random;
+
 public class SortingInventory implements SorttingInterface
 {
-    static private int countSteps = 0;
-    static private int countShifts = 0;
+    static int countSteps = 0;
+    static int countShifts = 0;
     @java.lang.Override
-    public void BubbleSort(int[] numbers) {
+    public int[] BubbleSort(int[] numbers) {
+        countShifts = 0;
+        countSteps = 0;
         int k =numbers.length;
         for (int j = 0; j < k; j++){
-            for (int i = 0; i < k - j -2; i++){
-                if(numbers[i] < numbers[i + 1]){
-                    Swap(numbers[i], numbers[i + 1]);
+            for (int i = 0; i < k - j -1; i++){
+                if(numbers[i] > numbers[i + 1]){
+                    numbers[i] = Swap(numbers[i + 1], numbers[i + 1] = numbers[i]);
                     countShifts++;
                 }
                 countSteps++;
             }
         }
-       //return numbers;
+       return numbers;
     }
 
-    private void Swap(int a, int b) {
-        int z = a;
-        a = b;
-        b = z;
+    private int Swap(int returnValue, int swapValue) {
+        return returnValue;
     }
 
     @java.lang.Override
     public double[] BubbleSort(double[] numbers) {
+        countShifts = 0;
+        countSteps = 0;
         int k =numbers.length;
         for (int j = 0; j < k; j++){
-            for (int i = 0; i < k - j -2; i++){
-                if(numbers[i] < numbers[i + 1]){
-                    Swap(numbers[i], numbers[i + 1]);
+            for (int i = 0; i < k - j -1; i++){
+                if(numbers[i] > numbers[i + 1]){
+                    numbers[i] = Swap(numbers[i + 1], numbers[i + 1] = numbers[i]);
                     countShifts++;
                 }
                 countSteps++;
@@ -40,9 +44,21 @@ public class SortingInventory implements SorttingInterface
         return numbers;
     }
 
-    private void Swap(double a, double b) {
-        double z = a;
-        a = b;
-        b = z;
+    @Override
+    public int[] CreateArray(int size) {
+        int[] array = new int[size];
+        Random random = new Random();
+        for (int i = 0; i < size; i++){
+            array[i] = random.nextInt(55);
+        }
+        return array;
+    }
+
+    private double Swap(double returnValue, double swapValue) {
+        return returnValue;
+    }
+
+    public void ShowSteps(){
+        System.out.println("Total steps - " + countSteps + " (shifts - " + countShifts + ")");
     }
 }
