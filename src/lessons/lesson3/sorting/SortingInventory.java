@@ -45,6 +45,24 @@ public class SortingInventory implements SorttingInterface
     }
 
     @Override
+    public int[] QuickSort(int[] numbers) {
+        int[] array = new int[numbers.length];
+        array = QuickSorting(numbers, 0 , numbers.length);
+        return array;
+    }
+
+    private int[] QuickSorting(int[] numbers, int lo, int hi) {
+        //int p = Partition(numbers)
+        int[] ints = new int[0];
+        return ints;
+    }
+
+    @Override
+    public double[] QuickSort(double[] numbers) {
+        return new double[0];
+    }
+
+    @Override
     public int[] CreateArray(int size) {
         int[] array = new int[size];
         Random random = new Random();
@@ -61,4 +79,7 @@ public class SortingInventory implements SorttingInterface
     public void ShowSteps(){
         System.out.println("Total steps - " + countSteps + " (shifts - " + countShifts + ")");
     }
+
+
+
 }
