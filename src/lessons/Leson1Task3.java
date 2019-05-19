@@ -8,7 +8,7 @@ public class Leson1Task3 {
         {
             Scanner in2 = new Scanner(System.in);
             System.out.print("Enter first number: x = ");
-            //todo: add check for numeric input
+
             double operand1 = in2.nextDouble();
 
             System.out.print("Enter second number: y = ");
