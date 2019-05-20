@@ -33,8 +33,15 @@ public class Main {
         System.out.println();
         System.out.println();
     }
+
     public static void main(String[] args) {
         //ConstructExample();
-        staticExample();
+        //staticExample();
+
+        Car car = new Car("HotWheel");
+
+        car.wheels[1] = new Wheel("Italy");
+        car.wheels[1].setPrice(5055);
+        car.show();
     }
 }
