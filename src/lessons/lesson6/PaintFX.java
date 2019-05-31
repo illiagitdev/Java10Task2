@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class PaintFX extends Application {
     private Random r = new Random();
-    private static final int WINDOW_WIDTH = 1000;
+    private static final int WINDOW_WIDTH = 700;
     private static final int WINDOW_HEIGHT = 700;
     private static final int RGB_SYMBOLS_COUNT = 6;
     private static final int COUNT_OF_CIRCLES = 100;
@@ -54,7 +54,7 @@ public class PaintFX extends Application {
         button.setTranslateX(10);
         button.setTranslateY(10);
         button.setOnAction((event) -> {
-//            circlesRoot.getChildren().clear();
+            circlesRoot.getChildren().clear();
             draw(circlesRoot);
         });
         root.getChildren().addAll(button);

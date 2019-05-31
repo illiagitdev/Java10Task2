@@ -43,7 +43,7 @@ public class MainFXWindow extends Application {
         Text text = new Text("Hello World!");
         text.setTranslateX(10);
         text.setTranslateY(10);
-        Font font = new Font(24);
+        Font font = new Font(20);
         text.setFont(font);
 
         text.setText(text.getText() + "\nnew line");
@@ -72,6 +72,7 @@ public class MainFXWindow extends Application {
                 System.out.println("W was pressed");
             }
         });
+
         root.getChildren().addAll(text, button, textField, scrollBar);
     }
     @Override
