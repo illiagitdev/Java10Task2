@@ -39,10 +39,23 @@ public class Line {
      */
     public double calcLength() { return getP1().calcLength(getP2()); }
 
+    /*
+    * line AB
+    * B = A + n * l or D = A + n * l * k
+    * n - normalized vector of AB line
+    * |AB| - module or length of line AB
+    * k - [0, 1] for Point on line
+    * */
     public Point getPointOnLine(float percent) {
         if (percent >= 0.0f && percent <= 1.0f){
+            // normal vector for line
+            Point lineVector = (new Point(lineFx.getEndX()- lineFx.getStartX(), lineFx.getEndY()- lineFx.getStartY()).normalize());
 
-            return new Point();
+            double newXOnLine = lineFx.getStartX() + percent * calcLength() * lineVector.getX();
+            double newYOnLine = lineFx.getStartY() + percent * calcLength() * lineVector.getY();
+            Point pointOnLine = new Point(newXOnLine, newYOnLine);
+
+            return pointOnLine;
         }
         System.out.println("Point not on the line!!!");
         return new Point(0, 0);
@@ -62,17 +75,20 @@ public class Line {
         System.out.println(line);
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Line line1 = new Line();
         Line line2 = new Line(new Point(5, 10));
         Line line3 = new Line(new Point(2, 3), new Point(10, 11));
 
 //        line1.showLineData();
 //        line2.showLineData();
-//        line3.showLineData();
+        line3.showLineData();
         System.out.println("Length " + line1.calcLength());
         System.out.println("Length " + line2.calcLength());
         System.out.println("Length " + line3.calcLength());
 
-    }
+        Point onLine1 = line3.getPointOnLine(0.75f);
+        System.out.print("75% ");
+        onLine1.show();
+    }*/
 }
