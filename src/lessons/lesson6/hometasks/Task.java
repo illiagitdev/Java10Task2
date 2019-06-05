@@ -6,8 +6,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Task extends Application {
-    public final int WINDOW_WIDTH = 550;
-    public final int WINDOWS_HEIGHT = 500;
+    public final int WIDTH = 550;
+    public final int HEIGHT = 500;
     public static void main(String[] args) { launch(args); }
 
     @Override
@@ -49,11 +49,11 @@ public class Task extends Application {
     }
 
     private void windowsSetUp(Stage stage) {
-        stage.setMaxWidth(WINDOW_WIDTH);
-        stage.setMaxHeight(WINDOWS_HEIGHT);
+        stage.setMaxWidth(WIDTH);
+        stage.setMaxHeight(HEIGHT);
 
-        stage.setMinWidth(WINDOW_WIDTH);
-        stage.setMinHeight(WINDOWS_HEIGHT);
+        stage.setMinWidth(WIDTH);
+        stage.setMinHeight(HEIGHT);
 
         //todo: setHeght - додати елемент - іноді викидає не той розмір вікна
     }

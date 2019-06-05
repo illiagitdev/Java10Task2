@@ -38,7 +38,9 @@ public class Line {
      *
      * @return length
      */
-    public double calcLength() { return getP1().calcLength(getP2()); }
+    public double calcLength() {
+        return getP1().calcLength(getP2());
+    }
 
     /*
     * line AB
@@ -68,7 +70,7 @@ public class Line {
      */
     public void draw(Pane root) {
         lineFx.setOpacity(3);
-        lineFx.setStroke(Paint.valueOf("#00FFFF"));
+        lineFx.setStroke(Paint.valueOf("#000000"));
         root.getChildren().addAll(lineFx);
     }
 
@@ -85,21 +87,4 @@ public class Line {
                 ";\nEnd: " + lineFx.getEndX() + " " + lineFx.getEndY();
         System.out.println(line);
     }
-
-    /*public static void main(String[] args) {
-        Line line1 = new Line();
-        Line line2 = new Line(new Point(5, 10));
-        Line line3 = new Line(new Point(2, 3), new Point(10, 11));
-
-//        line1.showLineData();
-//        line2.showLineData();
-        line3.showLineData();
-        System.out.println("Length " + line1.calcLength());
-        System.out.println("Length " + line2.calcLength());
-        System.out.println("Length " + line3.calcLength());
-
-        Point onLine1 = line3.getPointOnLine(0.75f);
-        System.out.print("75% ");
-        onLine1.show();
-    }*/
 }

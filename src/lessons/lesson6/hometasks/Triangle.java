@@ -18,7 +18,6 @@ public class Triangle {
     }
     //todo: draw() без root, як це реалізувати???
     public void clear(Pane root){
-        //root.getChildren().clear();
         l1.clear(root);
     }
 }
