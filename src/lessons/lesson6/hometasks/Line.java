@@ -1,6 +1,7 @@
 package lessons.lesson6.hometasks;
 
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Paint;
 
 public class Line {
     private Point p1 = new Point();
@@ -61,10 +62,20 @@ public class Line {
         return new Point(0, 0);
     }
 
+    /**
+     * draw a line in Pane
+     * @param root
+     */
     public void draw(Pane root) {
+        lineFx.setOpacity(3);
+        lineFx.setStroke(Paint.valueOf("#00FFFF"));
         root.getChildren().addAll(lineFx);
     }
 
+    /**
+     * clear Pane from lines
+     * @param root
+     */
     public void clear(Pane root) {
         root.getChildren().clear();
     }
