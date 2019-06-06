@@ -7,8 +7,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-
-import java.awt.*;
 import java.util.Random;
 
 public class PaintFX extends Application {
