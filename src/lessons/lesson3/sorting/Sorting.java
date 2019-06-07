@@ -14,7 +14,6 @@ public class Sorting {
 
         //creating array and see what inside{
         System.out.print("Enter array length: ");
-        //todo: add check for numeric input: done!!!!!
         if(scan.hasNextInt()){
             size = scan.nextInt();
         }else {
