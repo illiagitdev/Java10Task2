@@ -1,4 +1,4 @@
-package lessons.lesson6.hometasks;
+package lessons.lesson5_1.hometasks;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;

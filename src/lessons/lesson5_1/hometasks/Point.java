@@ -1,4 +1,4 @@
-package lessons.lesson6.hometasks;
+package lessons.lesson5_1.hometasks;
 
 public class Point {
     public static Point startPoint = new Point(0, 0);
