@@ -10,9 +10,16 @@ public class MyFileWriter {
         this.path = patg;
     }
 
-    public boolean write(String txt){
+
+    //    write to file directory - rewrite every time it called
+    public boolean write(String txt) {
+        return write(txt, false);
+    }
+
+    //    write to tge end of an existing file
+    public boolean write(String txt, boolean append) {
         try {
-            FileWriter writer = new FileWriter(path);
+            FileWriter writer = new FileWriter(path, append);
             writer.write(txt);
             writer.flush();
             writer.close();
