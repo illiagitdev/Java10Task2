@@ -72,6 +72,8 @@ public class Line {
         lineFx.setOpacity(3);
         lineFx.setStroke(Paint.valueOf("#000000"));
         root.getChildren().addAll(lineFx);
+        p1.show();
+        p2.show();
     }
 
     /**

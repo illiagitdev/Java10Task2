@@ -1,4 +1,4 @@
-package lessons.lesson5_3;
+package lessons.lesson5_3.files;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -6,8 +6,8 @@ import java.io.IOException;
 public class MyFileWriter {
     public String path;
 
-    public MyFileWriter(String patg) {
-        this.path = patg;
+    public MyFileWriter(String path) {
+        this.path = path;
     }
 
 

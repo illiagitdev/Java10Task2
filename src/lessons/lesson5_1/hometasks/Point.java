@@ -6,6 +6,8 @@ public class Point {
     private double x;
     private double y;
 
+    private String path = "files/lesson5_3/lessons_fractal/log.txt";
+
     public Point() {
         this(0, 0);
     }
@@ -79,5 +81,13 @@ public class Point {
     public void show() {
         String str = "x: " + x + " y: " + y;
         System.out.println(str);
+        show(path);
+    }
+
+    //path - fix it if going to use from other classes
+    public void show(String path) {
+        String point = ("x: " + x + ", y: " + y);
+        Logging logPoint = new Logging(path);
+        logPoint.writeLog(point);
     }
 }

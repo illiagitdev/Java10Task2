@@ -1,4 +1,4 @@
-package lessons.fractals.parts;
+package lessons.lesson5_1.hometasks;
 
 import java.io.FileWriter;
 import java.io.IOException;
