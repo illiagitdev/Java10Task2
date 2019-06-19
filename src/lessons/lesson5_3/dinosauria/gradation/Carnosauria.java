@@ -1,4 +1,4 @@
 package lessons.lesson5_3.dinosauria.gradation;
 
-public class Carnosauria {
+public class Carnosauria extends Dinosaures{
 }

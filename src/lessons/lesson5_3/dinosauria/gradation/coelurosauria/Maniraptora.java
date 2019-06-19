@@ -1,4 +1,6 @@
 package lessons.lesson5_3.dinosauria.gradation.coelurosauria;
 
-public class Maniraptora {
+import lessons.lesson5_3.dinosauria.gradation.Carnosauria;
+
+public class Maniraptora extends Carnosauria {
 }

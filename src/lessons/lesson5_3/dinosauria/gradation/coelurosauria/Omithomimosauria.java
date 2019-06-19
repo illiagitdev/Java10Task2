@@ -1,4 +1,6 @@
 package lessons.lesson5_3.dinosauria.gradation.coelurosauria;
 
-public class Omithomimosauria {
+import lessons.lesson5_3.dinosauria.gradation.Carnosauria;
+
+public class Omithomimosauria extends Carnosauria {
 }
