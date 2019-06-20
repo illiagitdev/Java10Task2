@@ -18,7 +18,7 @@ public class Task extends Application {
         Pane root = new Pane();
         Pane fractalPane = new Pane();
         root.getChildren().addAll(fractalPane);
-        //todo: додати кнопки для генерації та очистки вікна для діній, трикутників, фракталу
+        //todo: додати кнопки для генерації дерева, і власне дерево
         windowsSetUp(stage);
 
         uiSetUp(root, fractalPane);
@@ -32,14 +32,28 @@ public class Task extends Application {
     private void uiSetUp(Pane root, Pane fractalPane) {
         //todo: додав кнопку і змінив шлях
         //  --module-path c:\javafx-sdk-12.0.1\lib\ --add-modules javafx.controls,javafx.fxml --add-modules javafx.base,javafx.graphics
-        Button button = new Button("Regenerate");
-        button.setTranslateX(25);
-        button.setTranslateY(25);
-        button.setOnAction((event) -> {
+        Button buttonTriangle = new Button("Regenerate");
+        buttonTriangle.setTranslateX(25);
+        buttonTriangle.setTranslateY(25);
+        buttonTriangle.setOnAction((event) -> {
             fractalPane.getChildren().clear();
             draw(fractalPane);
         });
-        root.getChildren().add(button);
+        Button buttonTriangleClear = new Button("Clear Triangle");
+        buttonTriangleClear.setTranslateX(25);
+        buttonTriangleClear.setTranslateY(75);
+        buttonTriangleClear.setOnAction((event) -> {
+            fractalPane.getChildren().clear();
+        });
+
+        Button buttonTree = new Button("Paint Tree");
+        buttonTree.setTranslateX(325);
+        buttonTree.setTranslateY(25);
+        buttonTree.setOnAction((event)->{
+
+        });
+
+        root.getChildren().addAll(buttonTriangle,buttonTriangleClear);
 
     }
 
@@ -47,7 +61,7 @@ public class Task extends Application {
         Random offset = new Random();
         float shift = offset.nextFloat();
 //        Fractal fractalTriangle = new Fractal();
-        Fractal test = new Fractal(new Point(300,300), new Point(680,275), new Point(595,675), 9, shift);
+        Fractal test = new Fractal(new Point(300,300), new Point(680,275), new Point(595,675), 12, shift);
 //        fractalTriangle.draw(fractalPane);
         test.draw(fractalPane);
     }
