@@ -34,6 +34,7 @@ public class Line {
     public Point getP2() { return new Point(lineFx.getEndX(), lineFx.getEndY());  }
 
     /**
+     *
      * Return length of the line
      *
      * @return length
@@ -88,5 +89,24 @@ public class Line {
         String line = "Start: " + lineFx.getStartX() + " " + lineFx.getStartY() +
                 ";\nEnd: " + lineFx.getEndX() + " " + lineFx.getEndY();
         System.out.println(line);
+    }
+
+    public Line subLine(float i, float i1) {
+        Point newP1 = pointOnLine(i);
+        Point newP2 = pointOnLine(i);
+        return new Line(newP1, newP2);
+    }
+
+    private Point pointOnLine(float i) {
+        if (i<=1&&i>=0){
+            int x = (int)(lineFx.getStartX() + i * (lineFx.getEndX()-lineFx.getStartX()));
+            int y = (int)(25+lineFx.getStartY() + i * (lineFx.getEndY()-lineFx.getStartY()));
+            return new Point(x,y);
+        }
+        return null;
+    }
+
+    public Line subLine(float i) {
+        return subLine(0, i);
     }
 }

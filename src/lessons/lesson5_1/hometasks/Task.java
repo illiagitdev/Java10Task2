@@ -39,7 +39,8 @@ public class Task extends Application {
             fractalPane.getChildren().clear();
             draw(fractalPane);
         });
-        Button buttonTriangleClear = new Button("Clear Triangle");
+
+        Button buttonTriangleClear = new Button("Clear Scene");
         buttonTriangleClear.setTranslateX(25);
         buttonTriangleClear.setTranslateY(75);
         buttonTriangleClear.setOnAction((event) -> {
@@ -50,11 +51,32 @@ public class Task extends Application {
         buttonTree.setTranslateX(325);
         buttonTree.setTranslateY(25);
         buttonTree.setOnAction((event)->{
-
+            fractalPane.getChildren().clear();
+            drawTree(fractalPane);
         });
 
-        root.getChildren().addAll(buttonTriangle,buttonTriangleClear);
+        Button buttonLines = new Button("Lines");
+        buttonLines.setTranslateX(525);
+        buttonLines.setTranslateY(25);
+        buttonLines.setOnAction((event)->{
+            fractalPane.getChildren().clear();
+            drawLines(fractalPane);
+        });
 
+        root.getChildren().addAll(buttonTriangle,buttonTriangleClear, buttonTree, buttonLines);
+
+    }
+
+    private void drawLines(Pane fractalPane) {
+
+    }
+
+    //todo: doesn't work yet
+    private void drawTree(Pane fractalPane) {
+        int depth = 20;
+        Line line = new Line(new Point(475, 50), new Point(475, 80));
+        FractalTree newTree = new FractalTree(line, depth);
+        newTree.draw(fractalPane);
     }
 
     private void draw(Pane fractalPane) {
