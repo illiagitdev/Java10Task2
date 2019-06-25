@@ -29,12 +29,15 @@ public class Line {
     }
 
 
-    public Point getP1() { return new Point(lineFx.getStartX(), lineFx.getStartY()); }
+    public Point getP1() {
+        return new Point(lineFx.getStartX(), lineFx.getStartY());
+    }
 
-    public Point getP2() { return new Point(lineFx.getEndX(), lineFx.getEndY());  }
+    public Point getP2() {
+        return new Point(lineFx.getEndX(), lineFx.getEndY());
+    }
 
     /**
-     *
      * Return length of the line
      *
      * @return length
@@ -44,16 +47,16 @@ public class Line {
     }
 
     /*
-    * line AB
-    * B = A + n * l or D = A + n * l * k
-    * n - normalized vector of AB line
-    * |AB| - module or length of line AB
-    * k - [0, 1] for Point on line
-    * */
+     * line AB
+     * B = A + n * l or D = A + n * l * k
+     * n - normalized vector of AB line
+     * |AB| - module or length of line AB
+     * k - [0, 1] for Point on line
+     * */
     public Point getPointOnLine(float percent) {
-        if (percent >= 0.0f && percent <= 1.0f){
+        if (percent >= 0.0f && percent <= 1.0f) {
             // normal vector for line
-            Point lineVector = (new Point(lineFx.getEndX()- lineFx.getStartX(), lineFx.getEndY()- lineFx.getStartY()).normalize());
+            Point lineVector = (new Point(lineFx.getEndX() - lineFx.getStartX(), lineFx.getEndY() - lineFx.getStartY()).normalize());
 
             double newXOnLine = lineFx.getStartX() + percent * calcLength() * lineVector.getX();
             double newYOnLine = lineFx.getStartY() + percent * calcLength() * lineVector.getY();
@@ -67,6 +70,7 @@ public class Line {
 
     /**
      * draw a line in Pane
+     *
      * @param root
      */
     public void draw(Pane root) {
@@ -79,6 +83,7 @@ public class Line {
 
     /**
      * clear Pane from lines
+     *
      * @param root
      */
     public void clear(Pane root) {
@@ -97,11 +102,13 @@ public class Line {
         return new Line(newP1, newP2);
     }
 
-    private Point pointOnLine(float i) {
-        if (i<=1&&i>=0){
-            int x = (int)(lineFx.getStartX() + i * (lineFx.getEndX()-lineFx.getStartX()));
-            int y = (int)(25+lineFx.getStartY() + i * (lineFx.getEndY()-lineFx.getStartY()));
-            return new Point(x,y);
+    public Point pointOnLine(float i) {
+        if (i <= 1 && i >= 0) {
+            int x = (int)(lineFx.getStartX() + Math.abs(lineFx.getEndX() - lineFx.getStartX())* i);
+            //(int)(lineFx.getStartX() + i * (lineFx.getEndX()-lineFx.getStartX()));
+            int y = (int)(lineFx.getStartY() + Math.abs(lineFx.getEndY() - lineFx.getStartY())* i);
+            //(int)(25+lineFx.getStartY() + i * (lineFx.getEndY()-lineFx.getStartY()));
+            return new Point(x, y);
         }
         return null;
     }

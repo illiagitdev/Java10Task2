@@ -68,7 +68,8 @@ public class Task extends Application {
     }
 
     private void drawLines(Pane fractalPane) {
-
+        FractalLines testLines = new FractalLines();
+        testLines.draw(fractalPane);
     }
 
     //todo: doesn't work yet

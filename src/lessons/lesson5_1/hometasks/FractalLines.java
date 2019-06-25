@@ -4,7 +4,7 @@ import javafx.scene.layout.Pane;
 
 public class FractalLines {
     Line line, l2, l3;
-    int depth = 5;
+    int depth = 5, step = 25; //   count of recursion depth & base step for good display
 
     public FractalLines(Line line, int depth) {
         this.line = line;
@@ -26,10 +26,24 @@ public class FractalLines {
         l3.draw(root);
     }
 
-    public void draw(Pane root){
-        while (depth>0){
+    //draw base line and start recursion
+    public  void draw(Pane root){
+        line.draw(root); //draw base line in scene
+        drawSet(root, line);
+    }
+
+    private void drawSet(Pane root, Line line){
+        Line newLine1, newLine2;
+        while(depth>0){
             depth--;
-            line.draw(root);
+            Point p1=line.pointOnLine(0.3f);
+            Point p2=line.pointOnLine(0.7f);
+            newLine1=new Line(new Point(line.getP1().getX(),line.getP1().getY()+depth*step),new Point(p1.getX(), p1.getY()+depth*step));
+
+            newLine2=new Line(new Point(p2.getX(),p2.getY()+depth*step),new Point(line.getP2().getX(),line.getP1().getY()+depth*step));
+
+            drawSet(root, newLine1);
+            drawSet(root, newLine2);
         }
     }
 
