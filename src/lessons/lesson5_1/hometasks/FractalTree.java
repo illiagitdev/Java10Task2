@@ -29,16 +29,16 @@ public class FractalTree {
     //  тест без кута зі зміщенням в одній координаті x
     public void draw(Pane root, Line line, double angel, int depth) {
         while (depth > 0) {
-            depth-=4;
+            depth -= 4;
             line.draw(root);
             //Line lineA = new Line(line.getP2(), new Point(line.getP2().getX() +Math.cos(angle)*lenth*depth, line.getP2().getY()+Math.sin(angle)*lenth*depth));
-            Line lineB = new Line(line.getP2(), new Point(line.getP2().getX() +Math.cos(angle)*lenth*depth, line.getP2().getY()+Math.sin(angle)*lenth*depth));
+            Line lineB = new Line(line.getP2(), new Point(line.getP2().getX() + Math.cos(angle) * lenth * depth, line.getP2().getY() + Math.sin(angle) * lenth * depth));
             //draw(root, lineA,angel+5,depth);
-            draw(root, lineB,angel-5,depth);
+            draw(root, lineB, angel - 5, depth);
         }
     }
 
-    public void draw(Pane root){
+    public void draw(Pane root) {
         draw(root, line, angle, depth);
     }
 

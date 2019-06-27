@@ -34,15 +34,18 @@ public class FractalLines {
 
     private void drawSet(Pane root, Line line){
         Line newLine1, newLine2;
-        while(depth>0){
-            depth--;
+        int z = depth--;
+        while(z>1){
+            z--;
             Point p1=line.pointOnLine(0.3f);
             Point p2=line.pointOnLine(0.7f);
             newLine1=new Line(new Point(line.getP1().getX(),line.getP1().getY()+depth*step),new Point(p1.getX(), p1.getY()+depth*step));
 
             newLine2=new Line(new Point(p2.getX(),p2.getY()+depth*step),new Point(line.getP2().getX(),line.getP1().getY()+depth*step));
 
+            newLine1.draw(root);
             drawSet(root, newLine1);
+            newLine2.draw(root);
             drawSet(root, newLine2);
         }
     }
