@@ -24,6 +24,7 @@ public class Fractal {
 
     //todo:     отрисовывает одну итерацию фрактала и вызывает себя рекурсивно до тех пор пока не нарисует все итерации
     public void draw(Pane root) {
+        log();
         while (depth > 0) {
             triangle.draw(root);
             depth--;
@@ -38,5 +39,12 @@ public class Fractal {
     //*	функцию clear() из класса Triangle
     public void clear(Pane root) {
         triangle.clear(root);
+    }
+
+    //adding notes which fractal adding
+    private void log(){
+        String text = "fractal triangle";
+        Logging newLog = new Logging();
+        newLog.writeLog(text);
     }
 }

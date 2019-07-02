@@ -9,6 +9,7 @@ import java.util.Date;
 
 public class Logging {
     private String path;
+    private boolean append =true;
 
     public Logging(String path) {
         this.path = path;
@@ -18,7 +19,7 @@ public class Logging {
             "someLog.txt";}
 
     public boolean writeLog(String txt){
-        return write(txt, true);
+        return write(txt, append);
     }
 
     public boolean write(String txt, boolean append){

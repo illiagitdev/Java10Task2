@@ -28,6 +28,7 @@ public class FractalTree {
     // todo: фігня якась
     //  тест без кута зі зміщенням в одній координаті x
     public void draw(Pane root, Line line, double angel, int depth) {
+        log();
         while (depth > 0) {
             depth -= 4;
             line.draw(root);
@@ -44,5 +45,12 @@ public class FractalTree {
 
     public void clear(Pane root) {
         line.clear(root);
+    }
+
+    //adding notes which fractal adding
+    private void log(){
+        String text = "fractal tree";
+        Logging newLog = new Logging();
+        newLog.writeLog(text);
     }
 }

@@ -28,6 +28,7 @@ public class FractalLines {
 
     //draw base line and start recursion
     public  void draw(Pane root){
+        log();
         line.draw(root); //draw base line in scene
         drawSet(root, line);
     }
@@ -50,8 +51,14 @@ public class FractalLines {
         }
     }
 
-    //todo: how to??
     public void clear(Pane root){
         line.clear(root);
+    }
+
+    //adding notes which fractal adding
+    private void log(){
+        String text = "fractal lines";
+        Logging newLog = new Logging();
+        newLog.writeLog(text);
     }
 }
