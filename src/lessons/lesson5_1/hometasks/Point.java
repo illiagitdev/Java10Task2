@@ -74,20 +74,4 @@ public class Point {
         nomalizedPoint.y = y / normalizer;
         return nomalizedPoint;
     }
-
-    /**
-     * Show point - for our convenience
-     */
-    public void show() {
-        String str = "x: " + x + " y: " + y;
-        System.out.println(str);
-        show(path);
-    }
-
-    //path - fix it if going to use from other classes
-    public void show(String path) {
-        String point = ("x: " + x + ", y: " + y);
-        Logging logPoint = new Logging(path);
-        logPoint.writeLog(point);
-    }
 }

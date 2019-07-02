@@ -77,8 +77,7 @@ public class Line {
         lineFx.setOpacity(3);
         lineFx.setStroke(Paint.valueOf("#000000"));
         root.getChildren().addAll(lineFx);
-        p1.show();
-        p2.show();
+        log();
     }
 
     /**
@@ -115,5 +114,11 @@ public class Line {
 
     public Line subLine(float i) {
         return subLine(0, i);
+    }
+
+    public void log() {
+        String line = (" x: " + x + ", y: " + y);
+        Logging logPoint = new Logging();
+        logPoint.writeLog(point);
     }
 }
