@@ -26,7 +26,7 @@ public class Logging {
             FileWriter writer = new FileWriter(path, append);
             //adding date to log file
             Date currentMoment = new Date();
-            SimpleDateFormat format = new SimpleDateFormat("yyyy/mm/dd hh:mm:ss.sss");
+            SimpleDateFormat format = new SimpleDateFormat("yyyy/mm/dd hh:mm:ss.sss ");
             String currMomentString = format.format(currentMoment.getTime());
             txt = currMomentString + txt + "\n";
             writer.write(txt);

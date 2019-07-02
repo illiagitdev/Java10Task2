@@ -117,8 +117,9 @@ public class Line {
     }
 
     public void log() {
-        String line = (" x: " + x + ", y: " + y);
+        String line = ("line (x1, y1): (" + lineFx.getStartX() +", " + lineFx.getStartY() + ")" +
+                " (x2, y2): " + "(" + lineFx.getEndX() + ", " +lineFx.getEndY() + ")");
         Logging logPoint = new Logging();
-        logPoint.writeLog(point);
+        logPoint.writeLog(line);
     }
 }
