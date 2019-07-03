@@ -13,8 +13,8 @@ public class UserDataReader {
     private String word;
     private int[] array;
 
-    public UserDataReader(String patg) {
-        this.path = patg;
+    public UserDataReader(String path) {
+        this.path = path;
     }
 
     public void read() throws FileNotFoundException {

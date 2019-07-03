@@ -4,7 +4,7 @@ import javafx.scene.layout.Pane;
 
 public class FractalLines {
     Line line, l2, l3;
-    int depth = 5, step = 25; //   count of recursion depth & base step for good display
+    int depth = 3, step = 25; //   count of recursion depth & base step for good display
 
     public FractalLines(Line line, int depth) {
         this.line = line;
