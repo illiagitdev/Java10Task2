@@ -3,7 +3,7 @@ package lessons.lesson5_2.animal;
 public class Dog extends Animal{
     public int fangsCount;
 
-    public Dog(){
+    public Dog(String dsf, int i, int i1){
         super();
     }
 
@@ -12,8 +12,17 @@ public class Dog extends Animal{
         System.out.println("Gav");
     }
 
-    public Dog(String name, int age, int fangsCount){
+    @Override
+    public int genAge() {
+        return age;
+    }
+
+    public Dog(String name, int age){
         super(name, age);
+        this.fangsCount = fangsCount;
+    }
+
+    public Dog(int fangsCount) {
         this.fangsCount = fangsCount;
     }
 }
