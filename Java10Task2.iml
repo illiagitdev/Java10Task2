@@ -12,5 +12,6 @@
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="bin" level="project" />
     <orderEntry type="library" name="fastjson-1.2.58" level="project" />
+    <orderEntry type="library" name="javafx-sdk-12.01" level="project" />
   </component>
 </module>

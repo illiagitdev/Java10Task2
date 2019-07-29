@@ -13,7 +13,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 //      todo: Config VM with this path to run
-//      --module-path c:\javafx-sdk-12.0.1\lib\ --add-modules javafx.controls,javafx.fxml --add-modules javafx.base,javafx.graphics
+//      --module-path c:\javafx-sdk-12.0.2\lib\ --add-modules javafx.controls,javafx.fxml --add-modules javafx.base,javafx.graphics
 public class MainFXWindow extends Application {
 
     private static final int WIDTH = 500;

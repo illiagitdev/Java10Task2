@@ -1,6 +1,9 @@
 package lessons.lesson5_2.animal;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 public class Dog extends Animal{
+    @JSONField(name = "qwerty")
     public int fangsCount;
 
     public Dog(String dsf, int i, int i1){
