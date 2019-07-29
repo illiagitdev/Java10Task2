@@ -1,26 +1,18 @@
 package lessons.lesson7.json.entity;
 
-public class User {
+public class DogEntity {
     public String name;
-    public Gender gender;
-    public int age;
+    public  int age;
 
-
-    public enum Gender{
-        male, female
-    }
-
-    public User(String name, Gender gender, int age) {
+    public DogEntity(String name, int age) {
         this.name = name;
-        this.gender = gender;
         this.age = age;
     }
 
     @Override
     public String toString() {
-        return "User{" +
+        return "DogEntity{" +
                 "name='" + name + '\'' +
-                ", gender=" + gender +
                 ", age=" + age +
                 '}';
     }

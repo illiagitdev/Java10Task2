@@ -13,4 +13,13 @@ public class Group {
         this.description = description;
         this.users = users;
     }
+
+    @Override
+    public String toString() {
+        return "Group{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", users=" + users +
+                '}';
+    }
 }
