@@ -1,11 +1,13 @@
 package lessons.lesson7.json;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
 import lessons.lesson7.json.entity.DogEntity;
 import lessons.lesson7.json.entity.Node;
 import lessons.lesson7.json.entity.User;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GenericJSONExample {
     public static void main(String[] args) {
@@ -31,10 +33,15 @@ public class GenericJSONExample {
 
 
         ArrayList<Node<DogEntity>> nodes1 = new ArrayList<>();
-        nodes1.add(new Node<DogEntity>(new DogEntity("hghfh", 3)), "my pet");
-        nodes1.add(new Node<>(new DogEntity("Donny", 5)), "pet");
+        nodes1.add(new Node<>(new DogEntity("hghfh", 3), "my pet"));
+        nodes1.add(new Node<>(new DogEntity("Donny", 5), "pet"));
 
         String json1 = JSON.toJSONString(nodes1);
         System.out.println(json1);
+
+//        TypeReference<Node<User>> typeRef = new TypeReference<Node<User>>(){};
+//        ArrayList<Node<User>> nodesClone = JSON.parseArray(json, typeRef);
+
+//        System.out.println(nodesClone.toString());
     }
 }
