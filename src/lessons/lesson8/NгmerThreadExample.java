@@ -1,6 +1,6 @@
 package lessons.lesson8;
 
-public class NimerThreadExample {
+public class NгmerThreadExample {
     public static void main(String[] args) {
         Runnable runnable = new Runnable() {
             @Override
