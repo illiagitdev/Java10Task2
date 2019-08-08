@@ -2,7 +2,7 @@ package lessons.lesson8_1;
 
 import java.util.ArrayList;
 
-public class SmartOvject<T> {
+public class SmartObject<T> {
     private ArrayList<Runnable> onUpdate = new ArrayList<>();
     private T value;
 
@@ -12,9 +12,8 @@ public class SmartOvject<T> {
 
     public void setValue(T value) {
         this.value = value;
-        for (Runnable onUpdate : this.onUpdate
-        ) {
-            onUpdate.run();
+        for (int i = 0; i<onUpdate.size();i++) {
+            onUpdate.get(i).run();
         }
     }
 

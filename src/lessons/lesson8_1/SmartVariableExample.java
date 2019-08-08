@@ -14,14 +14,35 @@ public class SmartVariableExample {
             "Page6: jgf7   673yrt"
     };
 
+    static int countOfPageUpdate = 0;
+
     public static void main(String[] args) {
-        SmartOvject<Integer> page = new SmartOvject<>();
-        page.getOnUpdate().add(()->{
+        SmartObject<Integer> page = new SmartObject<>();
+        page.getOnUpdate().add(() -> {
             System.out.println(book[page.getValue()]);
         });
 
+        Runnable runnableAnimation = () -> {
+            System.out.println("Start sheets jump animation");
+        };
+
+        Runnable onFifthUpdate = () -> {
+            page.getOnUpdate().remove(runnableAnimation);
+        };
+
+        Runnable onUpdate = () -> {
+            countOfPageUpdate++;
+            if (countOfPageUpdate == 5) {
+                onFifthUpdate.run();
+            }
+        };
+
+        page.getOnUpdate().add(runnableAnimation);
+        page.getOnUpdate().add(onUpdate);
+
+
         Scanner sc = new Scanner(System.in);
-        while (true){
+        while (true) {
             int userPage = sc.nextInt();
             page.setValue(userPage);
         }
