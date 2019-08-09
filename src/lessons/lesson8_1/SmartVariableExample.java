@@ -18,21 +18,25 @@ public class SmartVariableExample {
 
     public static void main(String[] args) {
         SmartObject<Integer> page = new SmartObject<>();
+        // 1 -----------------------------------------------
         page.getOnUpdate().add(() -> {
             System.out.println(book[page.getValue()]);
         });
 
+        // 2 -------------------------------------------------
         Runnable runnableAnimation = () -> {
             System.out.println("Start sheets jump animation");
         };
 
+        // 3 -------------------------------------------------
         Runnable onFifthUpdate = () -> {
             page.getOnUpdate().remove(runnableAnimation);
         };
 
+        // 4 -------------------------------------------------
         Runnable onUpdate = () -> {
             countOfPageUpdate++;
-            if (countOfPageUpdate == 5) {
+            if (countOfPageUpdate >= 5) {
                 onFifthUpdate.run();
             }
         };
